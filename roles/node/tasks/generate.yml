@@ -1,0 +1,22 @@
+---
+# tasks file for node
+- name: Create grid node target directory
+  file: path={{ target_dir }} state=directory mode=0755
+
+- name: Generate grid node config file
+  template:
+    src: "{{ role_path }}/templates/nodeconfig.json.j2"
+    dest: "{{ target_dir }}/nodeconfig_{{ device_name | regex_replace('\\s', '_') }}.json"
+    mode: 0755
+
+- name: Generate grid node start script
+  template:
+    src: "{{ role_path }}/templates/start.sh.j2"
+    dest: "{{ target_dir }}/start_{{ device_name | regex_replace('\\s', '_') }}.sh"
+    mode: 0755
+
+- name: Generate grid node stop script
+  template:
+    src: "{{ role_path }}/templates/stop.sh.j2"
+    dest: "{{ target_dir }}/stop_{{ device_name | regex_replace('\\s', '_') }}.sh"
+    mode: 0755

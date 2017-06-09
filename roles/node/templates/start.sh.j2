@@ -1,0 +1,16 @@
+#!/bin/bash
+
+## ./start_grid_node.sh "iPad 2" "iOS" "7.1" "<udid>" "<node config file path>" <appium server port>
+## ./start_grid_node_android.sh "Nexus 5" "Android" "4.4.2" "<udid>" "<node config file path>" <appium server port> <bootstrap port> <chromedriver port> <path to chrome driver executable>
+
+{% if platform_name == "iOS" %}
+## start ios webkit debug proxy
+proxy_num=$(ps -ef | grep ios_webkit_debug_proxy | grep -v grep | wc -l)
+if [ $proxy_num -eq 0 ];
+then
+	ios_webkit_debug_proxy -c {{ host }}:27753 -d > /dev/null 2>&1 &
+fi
+{% endif %}
+
+## start appium node
+appium --port {{ port }} --nodeconfig nodeconfig_{{ device_name | regex_replace('\\s', '_') }}.json --platform-version "{{ platform_version }}" --platform-name "{{ platform_name }}" --udid "{{ udid }}" --device-name "{{ device_name }}" &

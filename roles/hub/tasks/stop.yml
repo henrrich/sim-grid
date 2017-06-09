@@ -1,0 +1,3 @@
+---
+- name: Stop grid hub
+  command: chdir="{{ gridhub_target_dir }}" ./stop_grid.sh

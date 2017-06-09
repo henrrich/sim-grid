@@ -1,0 +1,5 @@
+---
+- name: Start grid hub
+  command: chdir="{{ gridhub_target_dir }}" ./start_grid.sh
+  async: 45
+  poll: 0

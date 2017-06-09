@@ -1,0 +1,8 @@
+#!/bin/bash
+
+ps -ef | grep {{ udid }} | grep -v grep | awk '{ print $2 }' | xargs kill -9
+
+{% if platform_name == "iOS" %}
+## stop ios webkit debug proxy
+ps -ef | grep ios_webkit_debug_proxy | grep -v grep | awk '{ print $2 }' | xargs kill -9
+{% endif %}

@@ -1,0 +1,4 @@
+---
+# vars file for hub
+gridhub_target_dir: ~/gridhub
+gridhub_jar: unitard-qa-grid-1.0.0.1-SNAPSHOT-jar-with-dependencies.jar

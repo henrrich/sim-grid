@@ -1,0 +1,8 @@
+---
+- hosts: hub
+
+  tasks:
+    - name: Start unitard grid hub
+      include_role:
+        name: hub
+        tasks_from: start

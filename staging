@@ -1,0 +1,7 @@
+# staging inventory
+
+[hub]
+localhost
+
+[node]
+localhost

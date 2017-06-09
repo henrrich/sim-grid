@@ -1,0 +1,22 @@
+---
+# tasks file for unitard.gridhub
+- name: Create grid hub directory
+  file: path={{ gridhub_target_dir }} state=directory mode=0755
+
+- name: Copy grid hub jar file
+  copy:
+    src: "{{ role_path }}/files/{{ gridhub_jar }}"
+    dest: "{{ gridhub_target_dir }}/unitard-qa-grid.jar"
+    mode: 0755
+
+- name: Copy grid hub config file
+  template:
+    src: "{{ role_path }}/templates/hubconfig.json.j2"
+    dest: "{{ gridhub_target_dir }}/hubconfig.json"
+    mode: 0755
+
+- name: Copy grid hub start and stop scripts
+  copy: src={{ item.src }} dest={{ item.dest }} mode=0755
+  with_items:
+    - { src: '{{ role_path }}/files/start_grid.sh', dest: '{{ gridhub_target_dir }}/start_grid.sh' }
+    - { src: '{{ role_path }}/files/stop_grid.sh', dest: '{{ gridhub_target_dir }}/stop_grid.sh' }

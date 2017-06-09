@@ -1,0 +1,7 @@
+# production inventory
+
+[hub]
+10.100.13.51 ansible_connection=ssh ansible_user=natuse
+
+[node]
+localhost

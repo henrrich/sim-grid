@@ -1,0 +1,34 @@
+{
+  "capabilities":
+  [
+    {
+      "deviceName": "{{ device_name }}",
+      "platformVersion":"{{ platform_version }}",
+      "maxInstances": 1,
+      "platformName":"{{ platform_name }}",
+      {% if platform_name == "iOS" %}
+      "browserName":"Safari",
+      "platform":"MAC",
+      {% else %}
+      "browserName":"Chrome",
+	    "platform":"Android",
+      {% endif %}
+      "version":"{{ device_name }}, {{ platform_name }} {{ platform_version }}"
+    }
+  ],
+  "configuration":
+  {
+    "cleanUpCycle":2000,
+    "nodeTimeout":120,
+    "timeout":90000,
+    "proxy": "org.openqa.grid.selenium.proxy.DefaultRemoteProxy",
+    "url": "http://{{ host }}:{{ port }}/wd/hub",
+    "host": "{{ host }}",
+    "port": {{ port }},
+    "maxSession": 1,
+    "register": true,
+    "registerCycle": 5000,
+    "hubPort": {{ hub_port }},
+    "hubHost": "{{ hub_host }}"
+  }
+}
