@@ -2,7 +2,7 @@
 - hosts: hub
 
   tasks:
-    - name: Start unitard grid hub
+    - name: Start appium grid hub
       include_role:
         name: hub
         tasks_from: start

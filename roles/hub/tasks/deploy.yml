@@ -6,7 +6,7 @@
 - name: Copy grid hub jar file
   copy:
     src: "{{ role_path }}/files/{{ gridhub_jar }}"
-    dest: "{{ gridhub_target_dir }}/unitard-qa-grid.jar"
+    dest: "{{ gridhub_target_dir }}/appium-grid.jar"
     mode: 0755
 
 - name: Copy grid hub config file

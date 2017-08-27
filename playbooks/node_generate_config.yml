@@ -1,6 +1,6 @@
 ---
 
-### ansible-playbook -i production playbooks/node_generate_config.yml --extra-vars "target_dir=/Users/qa/gridnode device_name='iPhone 6 Plus' platform_version=8.1 platform_name=iOS host=10.100.14.252 port=4723 hub_host=10.100.13.252 hub_port=4444 udid=1234567"
+### ansible-playbook -i production playbooks/node_generate_config.yml --extra-vars "target_dir=/Users/henrrich/gridnode device_name='iPhone 6 Plus' platform_version=8.1 platform_name=iOS host=10.100.14.252 port=4723 hub_host=10.100.13.252 hub_port=4444 udid=1234567"
 
 - hosts: node
 
