@@ -108,8 +108,6 @@ ansible-playbook -i production playbooks/node_generate_config.yml --extra-vars "
 
 The following files will be generated under the specified target directory:
 
-<target directory>:
-
 * nodeconfig_<device name>.json ### node config file for grid node instance
 * start_<device name>.sh ### start script for Appium grid node instance that manages the specified device
 * stop_<device name>.sh ### stop script for Appium grid node instance that manages the specified device
