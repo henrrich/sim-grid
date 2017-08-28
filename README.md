@@ -71,7 +71,7 @@ ansible-playbook -i production playbooks/hub_start.yml
 
 Open the following URL in your browser, an empty Selenium grid website should be displayed:
 
-[http://target grid hub host IP:4444/grid/console](http://target grid hub host IP:4444/grid/console)
+[http://target_grid_hub_host_IP:4444/grid/console](http://target_grid_hub_host_IP:4444/grid/console)
 
  
 To stop the grid hub, run the following Ansible playbook command:
@@ -120,7 +120,7 @@ When the device is connected, use the generated start script to launch the Appiu
 
 The Appium grid node instance will register itself to the grid hub. You should be able to see the device in the grid hub console:
 
-[http://target grid hub host IP:4444/grid/console](http://target grid hub host IP:4444/grid/console)
+[http://target_grid_hub_host_IP:4444/grid/console](http://target_grid_hub_host_IP:4444/grid/console)
 
 To stop the Appium grid node instance, run the generated stop script:
 
