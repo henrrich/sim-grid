@@ -53,12 +53,13 @@ ansible-playbook -i production playbooks/hub_deploy.yml
 
 After the playbook is finished, logon to the remote grid hub host, the following files should be created under `$HOME/gridhub` folder of the SSH user:
 
-gridhub
--- hubconfig.json
--- log4j.properties
--- start_grid.sh
--- stop_grid.sh
--- appium-grid.jar
+gridhub:
+
+* hubconfig.json
+* log4j.properties
+* start_grid.sh
+* stop_grid.sh
+* appium-grid.jar
 
 ## Start and Stop Grid Hub:
 
@@ -107,10 +108,11 @@ ansible-playbook -i production playbooks/node_generate_config.yml --extra-vars "
 
 The following files will be generated under the specified target directory:
 
-<target directory>
--- nodeconfig_<device name>.json ### node config file for grid node instance
--- start_<device name>.sh ### start script for Appium grid node instance that manages the specified device
--- stop_<device name>.sh ### stop script for Appium grid node instance that manages the specified device
+<target directory>:
+
+* nodeconfig_<device name>.json ### node config file for grid node instance
+* start_<device name>.sh ### start script for Appium grid node instance that manages the specified device
+* stop_<device name>.sh ### stop script for Appium grid node instance that manages the specified device
 
 When the device is connected, use the generated start script to launch the Appium grid node instance:
 
